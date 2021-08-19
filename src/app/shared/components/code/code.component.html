@@ -1,0 +1,6 @@
+<ng-container *ngIf="code">
+  <div class="highlight">
+    <pre class="language-ts"><code class="hljs" [innerHTML]="code | highlightAuto"></code></pre>
+    <i (cdkCopyToClipboardCopied)="copy($event)" [cdkCopyToClipboard]="code" class="el-icon-copy-document"></i>
+  </div>
+</ng-container>

@@ -1,0 +1,30 @@
+.marked {
+  font-size: 14px;
+  line-height: 2;
+
+  h3 {
+    margin: 55px 0 20px;
+    font-weight: 400;
+    color: #1f2f3d;
+    font-size: 22px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul>li {
+    margin-left: 20px;
+    padding-left: 4px;
+    list-style-type: circle;
+  }
+
+  code {
+    margin: 0 1px;
+    padding: .2em .4em;
+    background: #f2f4f5;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+  }
+}

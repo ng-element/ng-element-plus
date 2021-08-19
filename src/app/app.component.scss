@@ -1,0 +1,161 @@
+.is-component {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 80px;
+  background-color: #ffffff;
+  color: #409eff;
+  font-weight: 600;
+}
+
+.toolbar {
+  height: 80px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dcdfe6;
+  display: flex;
+  align-items: center;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 8px;
+}
+
+.toolbar #youtube-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover,
+.toolbar #youtube-logo:hover {
+  opacity: 0.8;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.main-cnt {
+  flex: 1;
+  padding: 0;
+  margin-top: 0;
+  box-sizing: border-box;
+  overflow: auto;
+
+  .page-component {
+    box-sizing: border-box;
+    height: 100%;
+
+    &.page-container {
+      padding: 40px;
+    }
+  }
+
+  .page-container {
+    h2 {
+      font-size: 28px;
+      color: #1f2d3d;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin: 55px 0 20px;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: 400;
+      color: #1f2f3d;
+    }
+  }
+
+
+  .page-component__nav {
+    width: 240px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: padding-top .3s;
+
+    .side-nav {
+      height: 100%;
+      padding-bottom: 50px;
+      padding-right: 0;
+      width: 100%;
+      box-sizing: border-box;
+      transition: opacity .3s;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .nav-item a {
+        font-size: 16px;
+        color: #333;
+        line-height: 40px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        transition: .15s ease-out;
+        font-weight: 700;
+      }
+
+      .nav-item:nth-child(-n+4)>a {
+        margin-top: 0;
+      }
+
+      .nav-item .nav-item a {
+        display: block;
+        height: 40px;
+        color: #444;
+        line-height: 40px;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: 400;
+
+        &.active,
+        &:hover {
+          color: #409eff;
+        }
+      }
+
+      .nav-group__title {
+        font-size: 12px;
+        color: #999;
+        line-height: 26px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .page-component__content {
+    padding-left: 270px;
+    padding-bottom: 100px;
+    margin-right: 150px;
+    box-sizing: border-box;
+  }
+}

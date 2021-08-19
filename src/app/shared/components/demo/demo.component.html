@@ -1,0 +1,37 @@
+<div class="demo-block demo-box demo-zh-CN" [class]="classes" [class.hover]="hovering" (mouseenter)="hovering = true"
+  (mouseleave)="hovering = false">
+  <div class="source" *ngIf="codeUrl">
+    <ng-content select="[demo]"></ng-content>
+  </div>
+  <div class="meta" [@expand]="isExpanded" style="height: 0;">
+    <div class="description" *ngIf="notes">
+      <ng-container>
+        <div [innerHTML]="safeNotes"></div>
+      </ng-container>
+    </div>
+
+    <ng-container *ngIf="codeUrl">
+      <div class="highlight">
+        <pre>
+          <code class="language-typescript hljs" [innerHTML]="code | highlightAuto"></code>
+        </pre>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="demo-block-control is-fixed" (click)="showCode()">
+    <i [class]="'el-icon-caret-' + (isExpanded ? 'top' : 'bottom')" [class.hovering]="hovering"></i>
+    <span [@state]="hovering">
+      {{isExpanded ? '隐藏代码' : '显示代码'}}
+    </span>
+    <div class="control-button-container" [@state]="hovering">
+      <button (click)="$event.stopPropagation()" (cdkCopyToClipboardCopied)="copy($event)" [cdkCopyToClipboard]="code"
+        class="el-button el-button--text el-button--small control-button copy-button" type="button">
+        <span>复制代码片段</span>
+      </button>
+      <!-- <button class="el-button el-button--text el-button--small control-button run-online-button" type="button">
+        <span>在线运行</span>
+      </button> -->
+    </div>
+  </div>
+</div>

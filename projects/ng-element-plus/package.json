@@ -1,0 +1,19 @@
+{
+  "name": "ng-element-plus",
+  "version": "0.1.0-alpha.0",
+  "private": false,
+  "description": "Ng-Element-UI extension component.",
+  "homepage": "https://ng-element.github.io/ng-element-plus",
+  "repository": "https://github.com/ng-element/ng-element-plus",
+  "author": "llkui",
+  "keywords": [
+    "angular",
+    "element ui"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

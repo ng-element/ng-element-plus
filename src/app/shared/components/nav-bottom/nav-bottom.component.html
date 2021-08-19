@@ -1,0 +1,8 @@
+<span *ngIf="leftLink.link" [routerLink]="'/' + leftLink.link" class="footer-nav-link footer-nav-left">
+  <i class="el-icon-arrow-left"></i>
+  {{leftLink.name}}
+</span>
+<span *ngIf="rightLink.link" [routerLink]="'/' + rightLink.link" class="footer-nav-link footer-nav-right">
+  {{rightLink.name}}
+  <i class="el-icon-arrow-right"></i>
+</span>

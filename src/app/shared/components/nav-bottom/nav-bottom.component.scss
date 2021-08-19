@@ -1,0 +1,41 @@
+app-nav-bottom {
+  display: block;
+}
+
+.footer-nav {
+  padding: 40px 0;
+  color: #333;
+  font-size: 14px;
+
+  i {
+    transition: .3s;
+    color: #999;
+    vertical-align: baseline;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.footer-nav-link {
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover i,
+  &:hover {
+    color: #409eff;
+  }
+}
+
+.footer-nav-left {
+  float: left;
+  margin-left: -4px;
+}
+
+.footer-nav-right {
+  float: right;
+  margin-right: -4px;
+}
