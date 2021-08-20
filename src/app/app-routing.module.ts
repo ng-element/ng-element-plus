@@ -8,6 +8,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'changelog',
+    loadChildren: () => import('./changelog/changelog.module').then(m => m.ChangelogModule)
+  },
+  {
     path: 'installation',
     loadChildren: () => import('./installation/installation.module').then(m => m.InstallationModule)
   },

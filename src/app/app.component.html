@@ -36,11 +36,11 @@
           <nel-scrollbar>
             <div class="side-nav is-fade">
               <ul>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                   <a routerLink="/changelog" routerLinkActive="active">
                     更新日志
                   </a>
-                </li> -->
+                </li>
                 <li class="nav-item">
                   <a>开发指南</a>
                   <ul class="pure-menu-list sub-nav" style="height: auto;">
@@ -70,7 +70,7 @@
                 <li class="nav-item">
                   <a>组件</a>
                   <div class="nav-group" *ngFor="let group of groupList">
-                    <div class="nav-group__title">{{group.title}}：{{group.menuList.length}}</div>
+                    <div class="nav-group__title">{{group.title}}</div>
                     <ul class="pure-menu-list" style="height: auto;">
                       <li class="nav-item" *ngFor="let item of group.menuList">
                         <a [routerLink]="'/' + item.link" routerLinkActive="active">
