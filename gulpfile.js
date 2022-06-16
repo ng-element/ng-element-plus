@@ -22,15 +22,19 @@ function compile() {
     .pipe(dest(`./dist/${projectName}`));
 }
 
-// function copyfont() {
-//   return src('./node_modules/element-theme-chalk/src/fonts/**')
-//     .pipe(cssmin())
-//     .pipe(dest(`./dist/${projectName}/fonts`));
-// }
+function copyfont() {
+  return src('./node_modules/element-theme-chalk/src/fonts/**')
+    .pipe(dest(`./dist/${projectName}/fonts`));
+}
 
-exports.buildDemoCmp = series(clearDemoComponent, clearDoc, demoComponentPath, docPath);
-// exports.build = series(compile, copyfont);
-exports.build = series(compile);
+function copyReadme() {
+  return src('./README.md')
+    .pipe(dest(`./projects/${projectName}`))
+}
+
+exports.buildDemoCmp = series(clearDemoComponent, clearDoc, demoComponentPath, docPath, copyReadme);
+exports.buildReadme = series(copyReadme);
+exports.build = series(compile, copyfont);
 
 // 编译demo到assets
 const watch = require('gulp-watch');

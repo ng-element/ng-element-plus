@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lib": "ng build ng-element-plus-lib --prod && gulp build",
+    "lib": "gulp buildReadme && ng build ng-element-plus-lib --prod && gulp build",
     "stats": "gulp buildDemoCmp && ng build --prod --stats-json",
     "report": "webpack-bundle-analyzer dist/ng-element-plus/stats.json"
   },
@@ -25,6 +25,7 @@
     "@angular/router": "~11.2.11",
     "@types/marked": "^2.0.2",
     "date-fns": "^2.22.1",
+    "echarts": "^5.3.3",
     "element-theme-chalk": "^2.15.1",
     "gulp-clean": "^0.4.0",
     "gulp-watch": "^5.0.1",

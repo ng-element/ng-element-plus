@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'watermark',
     loadChildren: () => import('./watermark/watermark.module').then(m => m.WatermarkModule)
+  },
+  {
+    path: 'bar-chart',
+    loadChildren: () => import('./bar-chart/bar-chart.module').then(m => m.BarChartModule)
   }
 ];
 

@@ -63,22 +63,23 @@
 
   .page-container {
     h2 {
-      font-size: 28px;
+      font-size: 24px;
+      line-height: 36px;
       color: #1f2d3d;
-      margin: 0;
     }
 
     h3 {
-      font-size: 22px;
-      margin: 55px 0 20px;
+      font-size: 18px;
     }
 
     h2,
     h3,
     h4,
-    h5 {
-      font-weight: 400;
-      color: #1f2f3d;
+    h5,
+    h6 {
+      margin: 1.6em 0 .6em;
+      font-weight: 500;
+      color: rgba(0, 0, 0, .85);
     }
   }
 
