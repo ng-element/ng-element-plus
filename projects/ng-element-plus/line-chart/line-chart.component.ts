@@ -1,13 +1,13 @@
-import { AfterViewInit, Component, OnDestroy, ViewChild, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
 import ResizeObserver from 'resize-observer-polyfill';
 
 @Component({
-  selector: 'np-bar-chart',
-  templateUrl: './bar-chart.component.html'
+  selector: 'np-line-chart',
+  templateUrl: './line-chart.component.html'
 })
 
-export class NpBarChartComponent implements AfterViewInit, OnDestroy {
+export class NpLineChartComponent implements AfterViewInit, OnDestroy {
   @ViewChild('main') mainRef!: ElementRef;
   @Input() option: any;
   @Input() width = '100%';
@@ -25,7 +25,7 @@ export class NpBarChartComponent implements AfterViewInit, OnDestroy {
       this.ro = new ResizeObserver(() => {
         this.chartInstance.resize();
       });
-  
+
       this.ro.observe(this.mainRef.nativeElement);
     }
   }

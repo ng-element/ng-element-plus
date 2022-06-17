@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'bar-chart',
     loadChildren: () => import('./bar-chart/bar-chart.module').then(m => m.BarChartModule)
+  },
+  {
+    path: 'line-chart',
+    loadChildren: () => import('./line-chart/line-chart.module').then(m => m.LineChartModule)
   }
 ];
 
