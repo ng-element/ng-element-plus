@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
 import ResizeObserver from 'resize-observer-polyfill';
 
@@ -13,6 +13,7 @@ export class NpLineChartComponent implements AfterViewInit, OnDestroy {
   @Input() width = '100%';
   @Input() height = '300px';
   @Input() autoResize = true;
+  @Output() onReady: EventEmitter<echarts.EChartsType> = new EventEmitter<echarts.EChartsType>();
   chartInstance!: echarts.EChartsType;
   ro?: ResizeObserver;
 
@@ -20,6 +21,8 @@ export class NpLineChartComponent implements AfterViewInit, OnDestroy {
     this.chartInstance = echarts.init(this.mainRef.nativeElement);
 
     this.option && this.chartInstance.setOption(this.option);
+
+    this.onReady.emit(this.chartInstance);
 
     if (this.autoResize) {
       this.ro = new ResizeObserver(() => {
